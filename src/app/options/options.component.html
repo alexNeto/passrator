@@ -1,7 +1,15 @@
-<div id="config">
+<div id="outerConfig" align="center">
 
+  <div id="{{config}}"></div>
+
+  <button id="{{configButton}}" (click)="showConfig()"><img width="25px" src="{{imgPath}}"></button>
+
+  <div id="{{roundshadow}}"></div>
 </div>
-<div id="generate">
+
+
+<div id="generate" align="center">
  <button (click)="myEvent()">generate</button>
+ <br><br><br>
  <span>{{passStrength}}</span>
 </div>

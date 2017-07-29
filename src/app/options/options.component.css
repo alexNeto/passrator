@@ -1,29 +1,80 @@
 #generate{
-
+  margin-top: 65px;
+  align-items: center;
+}
+#outerConfig{
+  width: 100%;
+  height: 180px;
 }
 #config{
+  width: auto;
+  height: 150px;
+  background-color: #efe9f4;
+  box-shadow: 0 1px 3px 0 rgba(0,0,0,0.24),0 1px 2px 0 rgba(0,0,0,0.19);
+  transition-duration: 0.3s;
+  transition-timing-function: ease-in;
+  overflow: hidden;
+}
+
+#configOFF{
+  overflow: hidden;
+  max-height: 0;
+  padding-top: 0;
+  padding-bottom: 0;
+  margin-top: 0;
+  margin-bottom: 0;
+
+  transition-duration: 0.3s;
+
+  transition-timing-function: cubic-bezier(0, 1, 0.5, 1);
 
 }
+
+
 button {
-    border-radius: 3px;
-    padding: 6px 32px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 27px;
-    font-weight: bold;
-    margin: 4px 2px;
-    -webkit-transition-duration: 0.4s; /* Safari */
-    transition-duration: 0.4s;
-    cursor: pointer;
-    color: #5fbff9;
-    border: 2px solid #5fbff9;
-    background-color: white;
+  border-radius: 3px;
+  padding: 6px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 27px;
+  font-weight: bold;
+  /*margin: 4px 2px;*/
+  -webkit-transition-duration: 0.4s; /* Safari */
+  transition-duration: 0.4s;
+  cursor: pointer;
+  color: #5fbff9;
+  border: 2px solid #5fbff9;
+  background-color: white;
 
 }
-
 button:hover{
   box-shadow: 0 1px 3px 0 rgba(0,0,0,0.24),0 1px 2px 0 rgba(0,0,0,0.19);
+}
 
-
+#configButtonOFF{
+  border-style: none;
+  box-shadow: none;
+  padding: 0;
+  padding-top: 1px;
+  margin-top: -20px;
+  border-radius: 50%;
+  width: 60px;
+  height: 60px;
+  align-items: center;
+}
+#configButtonON{
+  position: relative;
+  margin-bottom: 20px;
+  padding: 0;
+  top: -30px;
+  border-radius: 50%;
+  width: 60px;
+  height: 60px;
+  align-items: center;
+  box-shadow: 0 1px 3px 0 rgba(0,0,0,0.24),0 1px 2px 0 rgba(0,0,0,0.19);
+}
+span{
+  font-size: 1.5em;
+  color: #171d1c;
 }
