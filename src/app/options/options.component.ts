@@ -18,33 +18,7 @@ export class OptionsComponent {
 transperancy(Transvalue){
     this.value = Transvalue;
 }
- inputRange(type) {
-   console.log(type);
-    let inputType;
-    switch (type) {
-      case 'text':
-        inputType = 'text';
-        break;
-        case 'numeric':
-        inputType = 'number';
-        this.min_length=5;
-        this.max_length=20;
-        break;
-      case 'number':
-        inputType = 'number';
-        this.min_input=0;
-        this.max_input=10;
-        break;
-      case 'range':
-        inputType = 'range';
-        this.min_input=0;
-        this.max_input=10;
-        break;
-      default:
-    }
-    return inputType;
-  }
-
+ 
   passStrength = '';
   imgPath = '././assets/img/down.png';
   configButton = 'configButtonOFF';

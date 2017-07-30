@@ -3,9 +3,8 @@
   <div id="{{config}}">
 
 
-      <input type="range"  id="range" min="0" max="{{inputRange(range)}}"
-      value="50"   min="{{inputRange(range)}}"
-      (input)="transperancy(Transvalue.value)" #Transvalue>
+      <input type="range"  id="range" min="0" max="100"
+      value="50" (input)="transperancy(Transvalue.value)" #Transvalue>
       <br><br><br>
       <span id="{{showStrength}}"> {{value}} </span>
 
