@@ -18,7 +18,7 @@ export class OptionsComponent {
 transperancy(Transvalue){
     this.value = Transvalue;
 }
- 
+
   passStrength = '';
   imgPath = '././assets/img/down.png';
   configButton = 'configButtonOFF';
