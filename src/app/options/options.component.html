@@ -1,7 +1,18 @@
 <div id="outerConfig" align="center">
 
-  <div id="{{config}}"></div>
+  <div id="{{config}}">
 
+
+      <input type="range"  id="range" min="0" max="{{inputRange(range)}}"
+      value="50"   min="{{inputRange(range)}}"
+      (input)="transperancy(Transvalue.value)" #Transvalue>
+      <br><br><br>
+      <span id="{{showStrength}}"> {{value}} </span>
+
+    <!--<input #ramSelector name="ram" type="range" min="0" max="{{ ramMaxValue }}" (change)="setRam(ramSelector.value)" value="0">-->
+
+
+  </div>
   <button id="{{configButton}}" (click)="showConfig()"><img width="25px" src="{{imgPath}}"></button>
 
   <div id="{{roundshadow}}"></div>
