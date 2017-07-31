@@ -7,6 +7,7 @@
   height: 180px;
 }
 #config{
+  overflow: hidden;
   animation-name: ON;
   animation-duration: 0.5s;
   width: auto;
@@ -15,6 +16,7 @@
   box-shadow: 0 1px 3px 0 rgba(0,0,0,0.24),0 1px 2px 0 rgba(0,0,0,0.19);
 }
 #configOFF{
+  display: none;
   animation-name: OFF;
   animation-duration: 0.5s;
   max-height: 0;
@@ -27,6 +29,7 @@
 }
 @keyframes ON {
     0%  {
+      display: none;
       position: inherit;
       top:0;
       height: 0;
@@ -99,10 +102,10 @@ span{
   color: #171d1c;
 }
 input[type=range] {
-  height: 36px;
+  height: 24px;
   -webkit-appearance: none;
-  margin: 50px 0;
-  width: 100%;
+  margin: 10px 0;
+  width: 90%;
 }
 input[type=range]:focus {
   outline: none;
