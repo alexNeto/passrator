@@ -1,24 +1,30 @@
 <div id="outerConfig" align="center">
   <div id="{{config}}">
-    <span> Password size: {{passSizeValue.value}}</span>
+    <div id="leading"></div>
+    <span style="font-size:1.2em;"> Password size: {{passSizeValue.value}}</span>
     <br>
     <input type="range" min="0" max="100"
     value="9" (input)="passSize(passSizeValue.value)" #passSizeValue>
 
+
       <form class="" (input)="passChar(lower, number, upper, special)">
-        <div class="checkboxOne">
+        <div class="checkbox">
+          <span class="configText">Lower</span>
           <input type="checkbox" id="lower" checked="true" #lower />
           <label for="lower"></label>
         </div>
-        <div class="checkboxOne">
+        <div class="checkbox">
+          <span class="configText">Number</span>
           <input type="checkbox" id="number" checked="true" #number />
           <label for="number"></label>
         </div>
-        <div class="checkboxOne">
+        <div class="checkbox">
+          <span class="configText">Upper</span>
           <input type="checkbox" id="upper" #upper />
           <label for="upper"></label>
         </div>
-        <div class="checkboxOne">
+        <div class="checkbox">
+          <span class="configText">Special</span>
           <input type="checkbox" id="special" #special />
           <label for="special"></label>
         </div>
