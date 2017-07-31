@@ -1,14 +1,24 @@
 <div id="outerConfig" align="center">
   <div id="{{config}}">
     <p> Password size: {{passSizeValue.value}}</p>
-  <input type="range"  id="range" min="0" max="100"
+  <input type="range" min="0" max="100"
     value="9" (input)="passSize(passSizeValue.value)" #passSizeValue>
+    <form class="" (input)="passChar(lower, number, upper, special)">
+      <span>Lower case</span>
+      <input type="checkbox" checked="true" #lower>
+      <span>Numbers</span>
+      <input type="checkbox" checked="true" #number>
+      <span>Upper case</span>
+      <input type="checkbox" #upper>
+      <span>Special characters</span>
+      <input type="checkbox" #special>
+  </form>
   </div>
   <button id="{{configButton}}" (click)="showConfig()"><img width="25px" src="{{imgPath}}"></button>
 </div>
 
 <div id="generate" align="center">
-  <span id="{{showStrength}}"> {{value}} </span>
+
  <button (click)="myEvent()">generate</button>
  <br><br><br>
  <span>{{passStrength}}</span>

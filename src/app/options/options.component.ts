@@ -11,20 +11,37 @@ export class OptionsComponent {
   value:number = 50;
   passSizeValue:number = 9;
 
-  passSize(passSizeValue){
-    this.passSizeValue = passSizeValue;
-  }
-
-strength(StrengthValue){
-    this.value = StrengthValue;
-}
-
   passStrength = '';
   imgPath = '././assets/img/down.png';
   configButton = 'configButtonOFF';
   config = 'configOFF';
-
   state = false;
+  passCharValue = '';
+  upper = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+  lower = "abcdefghijklmnopqrstuvwxyz";
+  number = "0123456789";
+  special = "()~!@#$%^&*-+=|\\{}[]:;\"'<>,.?/";
+  possible = this.lower + this.number;
+
+  passSize(passSizeValue){
+    this.passSizeValue = passSizeValue;
+  }
+
+passChar(Lower, Number, Upper, Special){
+
+  this.possible = '';
+  if(Lower.checked)
+    this.possible += this.lower;
+  if(Number.checked)
+    this.possible += this.number;
+  if(Upper.checked)
+    this.possible += this.upper;
+  if(Special.checked)
+    this.possible += this.special;
+
+  console.log(Lower.checked, Number.checked, Upper.checked, Special.checked);
+}
+
   showConfig(){
     if(this.state){
       this.state = false;
@@ -43,40 +60,9 @@ strength(StrengthValue){
   myEvent(){
 
     var text = "";
-    var upper = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
-    var lower = "abcdefghijklmnopqrstuvwxyz";
-    var number = "0123456789";
-    var special = "()`~!@#$%^&*-+=|\\{}[]:;\"'<>,.?/";
-    var possible = '';
-
-    if(this.value > 0){
-      possible += lower;
-
-    }
-    if(this.value > 10){
-      possible += number;
-    }
-    if(this.value > 20){
-      possible += upper;
-    }
-    if(this.value > 30){
-      possible += special;
-    }
-    if(this.value > 40){
-    }
-    if(this.value > 50){
-    }
-    if(this.value > 60){
-    }
-    if(this.value > 70){
-    }
-    if(this.value > 80){
-    }
-    if(this.value > 90){
-    }
 
     for (var i = 0; i < this.passSizeValue; i++)
-    text += possible.charAt(Math.floor(Math.random() * possible.length));
+    text += this.possible.charAt(Math.floor(Math.random() * this.possible.length));
 
     this.passStrength = text;
   }
