@@ -1,18 +1,32 @@
 <div id="outerConfig" align="center">
   <div id="{{config}}">
-    <p> Password size: {{passSizeValue.value}}</p>
-  <input type="range" min="0" max="100"
+    <span> Password size: {{passSizeValue.value}}</span>
+    <br>
+    <input type="range" min="0" max="100"
     value="9" (input)="passSize(passSizeValue.value)" #passSizeValue>
-    <form class="" (input)="passChar(lower, number, upper, special)">
-      <span>Lower case</span>
-      <input type="checkbox" checked="true" #lower>
-      <span>Numbers</span>
-      <input type="checkbox" checked="true" #number>
-      <span>Upper case</span>
-      <input type="checkbox" #upper>
-      <span>Special characters</span>
-      <input type="checkbox" #special>
-  </form>
+
+      <form class="" (input)="passChar(lower, number, upper, special)">
+        <div class="checkboxOne">
+          <input type="checkbox" id="lower" checked="true" #lower />
+          <label for="lower"></label>
+        </div>
+        <div class="checkboxOne">
+          <input type="checkbox" id="number" checked="true" #number />
+          <label for="number"></label>
+        </div>
+        <div class="checkboxOne">
+          <input type="checkbox" id="upper" #upper />
+          <label for="upper"></label>
+        </div>
+        <div class="checkboxOne">
+          <input type="checkbox" id="special" #special />
+          <label for="special"></label>
+        </div>
+        <!--<input type="checkbox" checked="true" #lower>
+        <input type="checkbox" checked="true" #number>
+        <input type="checkbox" #upper>
+        <input type="checkbox" #special>-->
+      </form>
   </div>
   <button id="{{configButton}}" (click)="showConfig()"><img width="25px" src="{{imgPath}}"></button>
 </div>
@@ -22,4 +36,5 @@
  <button (click)="myEvent()">generate</button>
  <br><br><br>
  <span>{{passStrength}}</span>
+
 </div>

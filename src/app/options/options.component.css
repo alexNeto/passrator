@@ -97,6 +97,7 @@ button:hover{
   box-shadow: 0 1px 3px 0 rgba(0,0,0,0.24),0 1px 2px 0 rgba(0,0,0,0.19);
 }
 span{
+  position: inherit;
   font-size: 1.5em;
   color: #171d1c;
 }
@@ -189,4 +190,36 @@ input[type=range]:focus::-ms-fill-lower {
 }
 input[type=range]:focus::-ms-fill-upper {
   background: #FFFFFF;
+}
+
+
+
+input[type=checkbox]{
+  display: none;
+}
+.checkboxOne {
+  display: inline-block;
+	width: 30px;
+	height: 20px;
+	background: #FFF;
+	margin: 20px 80px;
+	position: relative;
+	border-radius: 2px;
+}
+.checkboxOne label {
+	display: block;
+	width: 20px;
+	height: 20px;
+	border-radius: 2px;
+	transition: all .5s ease;
+	cursor: pointer;
+	position: absolute;
+	top: 0;
+	left: 0;
+	background: #5fbff9;
+  box-shadow: 0 1px 3px 0 rgba(0,0,0,0.24),0 1px 2px 0 rgba(0,0,0,0.19);
+}
+
+.checkboxOne input[type=checkbox]:checked + label {
+	left: 10px;
 }
