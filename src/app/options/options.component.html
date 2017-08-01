@@ -1,6 +1,6 @@
 <div id="outerConfig" align="center">
   <div id="{{config}}">
-    <div id="leading"></div>
+    <div class="leading"></div>
     <span style="font-size:1.2em;"> Password size: {{passSizeValue.value}}</span>
     <br>
     <input type="range" min="0" max="100"
@@ -40,8 +40,8 @@
  <div *ngIf="!state; then many else few"></div>
    <ng-template #many>
      <div *ngFor="let pass of passStrength; let i = index">
-
        <span>{{passStrength[i]}}</span>
+       <div class="leading"></div>
      </div>
    </ng-template>
    <ng-template #few>
