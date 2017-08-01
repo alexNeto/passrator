@@ -6,25 +6,25 @@
     <input type="range" min="0" max="100"
     value="9" (input)="passSize(passSizeValue.value)" #passSizeValue>
 
-      <form class="" (input)="passChar(lower, number, upper, special)">
+      <form class="" (change)="passChar(lower, number, upper, special)">
         <div class="checkbox">
           <span class="configText">Lower</span>
-          <input type="checkbox" id="lower" checked="true" #lower />
+          <input type="checkbox" id="lower" checked="true" (change)="lower.checked" #lower/>
           <label for="lower"></label>
         </div>
         <div class="checkbox">
           <span class="configText">Number</span>
-          <input type="checkbox" id="number" checked="true" #number />
+          <input type="checkbox" id="number" checked="true" (change)="number.checked" #number />
           <label for="number"></label>
         </div>
         <div class="checkbox">
           <span class="configText">Upper</span>
-          <input type="checkbox" id="upper" #upper />
+          <input type="checkbox" id="upper" (change)="upper.checked" #upper />
           <label for="upper"></label>
         </div>
         <div class="checkbox">
           <span class="configText">Special</span>
-          <input type="checkbox" id="special" #special />
+          <input type="checkbox" id="special" (change)="special.checked" #special />
           <label for="special"></label>
         </div>
       </form>
@@ -47,7 +47,5 @@
    <ng-template #few>
       <span>{{passStrength[0]}}</span>
    </ng-template>
-
-
 
 </div>

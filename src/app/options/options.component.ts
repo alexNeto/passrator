@@ -16,11 +16,14 @@ export class OptionsComponent {
   configButton = 'configButtonON';
   config = 'config';
   state = true;
-  upper = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
-  lower = "abcdefghijklmnopqrstuvwxyz";
-  number = "0123456789";
-  special = "()~!@#$%^&*-+=|\\{}[]:;\"'<>,.?/";
-  possible = this.lower + this.number;
+  case = {
+    upper: 'ABCDEFGHIJKLMNOPQRSTUVWXYZ',
+    lower: 'abcdefghijklmnopqrstuvwxyz',
+    number: '0123456789',
+    special: '()~!@#$%^&*-+=|\\{}[]:;\"\'<>,.?/'
+  };
+
+  possible = this.case.lower + this.case.number;
 
   passSize(passSizeValue){
     this.passSizeValue = passSizeValue;
@@ -31,13 +34,13 @@ passChar(Lower, Number, Upper, Special){
 
   this.possible = '';
   if(Lower.checked)
-    this.possible += this.lower;
+    this.possible += this.case.lower;
   if(Number.checked)
-    this.possible += this.number;
+    this.possible += this.case.number;
   if(Upper.checked)
-    this.possible += this.upper;
+    this.possible += this.case.upper;
   if(Special.checked)
-    this.possible += this.special;
+    this.possible += this.case.special;
 }
 
   showConfig(){
@@ -64,16 +67,14 @@ passChar(Lower, Number, Upper, Special){
       for (var i = 0; i < this.passSizeValue; i++)
         text += this.possible.charAt(Math.floor(Math.random() * this.possible.length));
       this.passStrength[0] = text;
-  }
-  else{
-    for(var j = 0; j < 10; j++){
-      text = ''
-      for (var i = 0; i < this.passSizeValue; i++)
-        text += this.possible.charAt(Math.floor(Math.random() * this.possible.length));
-      this.passStrength[j] = text;
+    }
+    else{
+      for(var j = 0; j < 10; j++){
+        text = ''
+        for (var i = 0; i < this.passSizeValue; i++)
+          text += this.possible.charAt(Math.floor(Math.random() * this.possible.length));
+          this.passStrength[j] = text;
       }
-
     }
   }
-
 }
