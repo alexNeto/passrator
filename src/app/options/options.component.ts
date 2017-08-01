@@ -11,12 +11,11 @@ export class OptionsComponent {
   value:number = 50;
   passSizeValue:number = 9;
 
-  passStrength = '';
-  imgPath = '././assets/img/down.png';
-  configButton = 'configButtonOFF';
-  config = 'configOFF';
-  state = false;
-  passCharValue = '';
+  passStrength = [];
+  imgPath = '././assets/img/up.png';
+  configButton = 'configButtonON';
+  config = 'config';
+  state = true;
   upper = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
   lower = "abcdefghijklmnopqrstuvwxyz";
   number = "0123456789";
@@ -26,6 +25,7 @@ export class OptionsComponent {
   passSize(passSizeValue){
     this.passSizeValue = passSizeValue;
   }
+
 
 passChar(Lower, Number, Upper, Special){
 
@@ -38,33 +38,42 @@ passChar(Lower, Number, Upper, Special){
     this.possible += this.upper;
   if(Special.checked)
     this.possible += this.special;
-
-  console.log(Lower.checked, Number.checked, Upper.checked, Special.checked);
 }
 
   showConfig(){
-    if(this.state){
-      this.state = false;
-      this.imgPath = '././assets/img/down.png';
-      this.configButton = 'configButtonOFF';
-      this.config = 'configOFF';
-    }
-    else{
+    if(!this.state){
       this.state = true;
       this.imgPath = '././assets/img/up.png';
       this.configButton = 'configButtonON';
       this.config = 'config';
 
     }
+    else{
+      this.state = false;
+      this.imgPath = '././assets/img/down.png';
+      this.configButton = 'configButtonOFF';
+      this.config = 'configOFF';
+
+    }
   }
   myEvent(){
 
-    var text = "";
+    var text = '';
 
-    for (var i = 0; i < this.passSizeValue; i++)
-    text += this.possible.charAt(Math.floor(Math.random() * this.possible.length));
+    if(this.state){
+      for (var i = 0; i < this.passSizeValue; i++)
+        text += this.possible.charAt(Math.floor(Math.random() * this.possible.length));
+      this.passStrength[0] = text;
+  }
+  else{
+    for(var j = 0; j < 10; j++){
+      text = ''
+      for (var i = 0; i < this.passSizeValue; i++)
+        text += this.possible.charAt(Math.floor(Math.random() * this.possible.length));
+      this.passStrength[j] = text;
+      }
 
-    this.passStrength = text;
+    }
   }
 
 }

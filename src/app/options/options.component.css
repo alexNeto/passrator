@@ -1,10 +1,13 @@
 #generate{
-  margin-top: 65px;
+  display: run-in;
+  position: relative;
+  margin-top: 0;
   align-items: center;
 }
 #outerConfig{
+  position: inherit;
   width: 100%;
-  height: 180px;
+  height: auto;
 }
 #config{
   overflow: hidden;
@@ -14,18 +17,6 @@
   height: 170px;
   background-color: #efe9f4;
   box-shadow: 0 1px 3px 0 rgba(0,0,0,0.24),0 1px 2px 0 rgba(0,0,0,0.19);
-}
-#configOFF{
-  display: none;
-  animation-name: OFF;
-  animation-duration: 0.5s;
-  max-height: 0;
-  overflow: hidden;
-  padding-top: 0;
-  padding-bottom: 0;
-  margin-top: 0;
-  margin-bottom: 0;
-
 }
 @keyframes ON {
     0%  {
@@ -40,22 +31,17 @@
       height: 170px;
     }
 }
-@keyframes OFF {
-    0%  {
-      position: inherit;
-      left:0;
-      top:1px;
-      height: 170px;
-      overflow: hidden;
-    }
-    100% {
-      overflow: hidden;
-      position: inherit;
-      top:1px;
-      height: 0;
-    }
+#configOFF{
+  animation-name: OFF;
+  animation-duration: 0.5s;
+  overflow: hidden;
+  display: none;
+  padding-top: 0;
+  padding-bottom: 0;
+  margin-top: 0;
+  margin-bottom: 0;
 }
-button {
+button{
   border-radius: 3px;
   padding: 6px 32px;
   text-align: center;
@@ -69,7 +55,6 @@ button {
   color: #5fbff9;
   border: 2px solid #5fbff9;
   background-color: white;
-
 }
 button:hover{
   box-shadow: 0 1px 3px 0 rgba(0,0,0,0.24),0 1px 2px 0 rgba(0,0,0,0.19);

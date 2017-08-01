@@ -6,7 +6,6 @@
     <input type="range" min="0" max="100"
     value="9" (input)="passSize(passSizeValue.value)" #passSizeValue>
 
-
       <form class="" (input)="passChar(lower, number, upper, special)">
         <div class="checkbox">
           <span class="configText">Lower</span>
@@ -28,19 +27,27 @@
           <input type="checkbox" id="special" #special />
           <label for="special"></label>
         </div>
-        <!--<input type="checkbox" checked="true" #lower>
-        <input type="checkbox" checked="true" #number>
-        <input type="checkbox" #upper>
-        <input type="checkbox" #special>-->
       </form>
-  </div>
-  <button id="{{configButton}}" (click)="showConfig()"><img width="25px" src="{{imgPath}}"></button>
+
+    </div>
+    <button id="{{configButton}}" (mousedown)="showConfig()"><img width="25px" src="{{imgPath}}"></button>
 </div>
 
 <div id="generate" align="center">
 
  <button (click)="myEvent()">generate</button>
  <br><br><br>
- <span>{{passStrength}}</span>
+ <div *ngIf="!state; then many else few"></div>
+   <ng-template #many>
+     <div *ngFor="let pass of passStrength; let i = index">
+
+       <span>{{passStrength[i]}}</span>
+     </div>
+   </ng-template>
+   <ng-template #few>
+      <span>{{passStrength[0]}}</span>
+   </ng-template>
+
+
 
 </div>
