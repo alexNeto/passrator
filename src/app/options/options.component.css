@@ -31,7 +31,23 @@
       height: 170px;
     }
 }
+@keyframes OFF {
+  0%  {
+    display: none;
+    position: inherit;
+    top:0;
+    height: 0;
+  }
+  100% {
+    position: inherit;
+    top:1px;
+    height: 170px;
+  }
+}
 #configOFF{
+  position: relative;
+  animation-name: ON;
+  animation-duration: 1.5s;
   overflow: hidden;
   display: none;
   padding-top: 0;

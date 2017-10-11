@@ -8,8 +8,8 @@ import { Component} from '@angular/core';
 
 export class OptionsComponent {
 
-  value:number = 50;
-  passSizeValue:number = 9;
+  value = 50;
+  passSizeValue = 9;
 
   passStrength = [];
   imgPath = '././assets/img/up.png';
@@ -25,7 +25,7 @@ export class OptionsComponent {
 
   possible = this.case.lower + this.case.number;
 
-  passSize(passSizeValue){
+  passSize(passSizeValue) {
     this.passSizeValue = passSizeValue;
   }
 
@@ -33,47 +33,49 @@ export class OptionsComponent {
 passChar(Lower, Number, Upper, Special){
 
   this.possible = '';
-  if(Lower.checked)
+  if (Lower.checked) {
     this.possible += this.case.lower;
-  if(Number.checked)
+  }
+  if (Number.checked) {
     this.possible += this.case.number;
-  if(Upper.checked)
+  }
+  if (Upper.checked) {
     this.possible += this.case.upper;
-  if(Special.checked)
+  }
+  if (Special.checked) {
     this.possible += this.case.special;
+  }
 }
 
-  showConfig(){
-    if(!this.state){
+  showConfig() {
+    if (!this.state) {
       this.state = true;
       this.imgPath = '././assets/img/up.png';
       this.configButton = 'configButtonON';
       this.config = 'config';
-
-    }
-    else{
+    } else {
       this.state = false;
       this.imgPath = '././assets/img/down.png';
       this.configButton = 'configButtonOFF';
       this.config = 'configOFF';
-
     }
   }
-  myEvent(){
 
-    var text = '';
-
-    if(this.state){
-      for (var i = 0; i < this.passSizeValue; i++)
-        text += this.possible.charAt(Math.floor(Math.random() * this.possible.length));
-      this.passStrength[0] = text;
+  generate() {
+    let text = '';
+    for (let i = 0; i < this.passSizeValue; i++) {
+      text += this.possible.charAt(Math.floor(Math.random() * this.possible.length));
     }
-    else{
-      for(var j = 0; j < 10; j++){
-        text = ''
-        for (var i = 0; i < this.passSizeValue; i++)
-          text += this.possible.charAt(Math.floor(Math.random() * this.possible.length));
-          this.passStrength[j] = text;
+    return text;
+  }
+
+  myEvent() {
+
+    if (this.state) {
+      this.passStrength[0] = this.generate();
+    } else {
+      for (let j = 0; j < 10; j++) {
+        this.passStrength[j] = this.generate();
       }
     }
   }
