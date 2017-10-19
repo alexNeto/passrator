@@ -1,4 +1,7 @@
 # PasswdGenerator
+[![Codacy Badge](https://api.codacy.com/project/badge/Grade/c0e0f282f9b14e6e93a01a0c715cbf08)](https://www.codacy.com/app/alexNeto/passrator?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=alexNeto/passrator&amp;utm_campaign=Badge_Grade)
+
+
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.2.6.
 
