@@ -1,51 +1,75 @@
 <div id="outerConfig" align="center">
-  <div id="{{config}}">
+  <div id="{{ config }}">
     <div class="leading"></div>
-    <span style="font-size:1.2em;"> Password size: {{passSizeValue.value}}</span>
-    <br>
-    <input type="range" min="0" max="100"
-    value="9" (input)="passSize(passSizeValue.value)" #passSizeValue>
+    <span style="font-size:1.2em;">
+      Password size: {{ passSizeValue.value }}</span
+    >
+    <br />
+    <input
+      type="range"
+      min="0"
+      max="100"
+      value="9"
+      (input)="passSize(passSizeValue.value)"
+      #passSizeValue
+    />
 
-      <form class="" (change)="passChar(lower, number, upper, special)">
-        <div class="checkbox">
-          <span class="configText">Lower</span>
-          <input type="checkbox" id="lower" checked="true" (change)="lower.checked" #lower/>
-          <label for="lower"></label>
-        </div>
-        <div class="checkbox">
-          <span class="configText">Number</span>
-          <input type="checkbox" id="number" checked="true" (change)="number.checked" #number />
-          <label for="number"></label>
-        </div>
-        <div class="checkbox">
-          <span class="configText">Upper</span>
-          <input type="checkbox" id="upper" (change)="upper.checked" #upper />
-          <label for="upper"></label>
-        </div>
-        <div class="checkbox">
-          <span class="configText">Special</span>
-          <input type="checkbox" id="special" (change)="special.checked" #special />
-          <label for="special"></label>
-        </div>
-      </form>
-
-    </div>
-    <button id="{{configButton}}" (mousedown)="showConfig()"><img width="25px" src="{{imgPath}}"></button>
+    <form class="" (change)="passChar(lower, number, upper, special)">
+      <div class="checkbox">
+        <span class="configText">Lower</span>
+        <input
+          type="checkbox"
+          id="lower"
+          checked="true"
+          (change)="(lower.checked)"
+          #lower
+        />
+        <label for="lower"></label>
+      </div>
+      <div class="checkbox">
+        <span class="configText">Number</span>
+        <input
+          type="checkbox"
+          id="number"
+          checked="true"
+          (change)="(number.checked)"
+          #number
+        />
+        <label for="number"></label>
+      </div>
+      <div class="checkbox">
+        <span class="configText">Upper</span>
+        <input type="checkbox" id="upper" (change)="(upper.checked)" #upper />
+        <label for="upper"></label>
+      </div>
+      <div class="checkbox">
+        <span class="configText">Special</span>
+        <input
+          type="checkbox"
+          id="special"
+          (change)="(special.checked)"
+          #special
+        />
+        <label for="special"></label>
+      </div>
+    </form>
+  </div>
+  <button id="{{ configButton }}" (mousedown)="showConfig()">
+    <img width="25px" src="{{ imgPath }}" />
+  </button>
 </div>
 
 <div id="generate" align="center">
-
- <button (click)="myEvent()">generate</button>
- <br><br><br>
- <div *ngIf="!state; then many else few"></div>
-   <ng-template #many>
-     <div *ngFor="let pass of passStrength; let i = index">
-       <span>{{passStrength[i]}}</span>
-       <div class="leading"></div>
-     </div>
-   </ng-template>
-   <ng-template #few>
-      <span>{{passStrength[0]}}</span>
-   </ng-template>
-
+  <button (click)="myEvent()">generate</button>
+  <br /><br /><br />
+  <div *ngIf="!state; then many; else few"></div>
+  <ng-template #many>
+    <div *ngFor="let pass of passStrength; let i = index">
+      <span>{{ passStrength[i] }}</span>
+      <div class="leading"></div>
+    </div>
+  </ng-template>
+  <ng-template #few>
+    <span>{{ passStrength[0] }}</span>
+  </ng-template>
 </div>

@@ -1,4 +1,4 @@
-import { Component} from '@angular/core';
+import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-options',
@@ -30,22 +30,22 @@ export class OptionsComponent {
   }
 
 
-passChar(Lower, Number, Upper, Special){
+  passChar(Lower, Number, Upper, Special) {
 
-  this.possible = '';
-  if (Lower.checked) {
-    this.possible += this.case.lower;
+    this.possible = '';
+    if (Lower.checked) {
+      this.possible += this.case.lower;
+    }
+    if (Number.checked) {
+      this.possible += this.case.number;
+    }
+    if (Upper.checked) {
+      this.possible += this.case.upper;
+    }
+    if (Special.checked) {
+      this.possible += this.case.special;
+    }
   }
-  if (Number.checked) {
-    this.possible += this.case.number;
-  }
-  if (Upper.checked) {
-    this.possible += this.case.upper;
-  }
-  if (Special.checked) {
-    this.possible += this.case.special;
-  }
-}
 
   showConfig() {
     if (!this.state) {
