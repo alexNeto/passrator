@@ -1,7 +1,6 @@
 language: node_js
 node_js:
   - lts/*
-sudo: required
 cache:
   directories:
     - node_modules
@@ -13,6 +12,9 @@ before_script:
 script:
   - npm run lint
   - npm run build
+after_success:
+  - firebase use --token $FIREBASE_TOKEN about-me-6a44f
+  - firebase --non-interactive --token $FIREBASE_TOKEN
 deploy:
   skip_cleanup: true
   provider: firebase

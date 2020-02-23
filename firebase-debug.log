@@ -1,0 +1,16 @@
+[debug] [2020-02-23T22:16:53.464Z] ----------------------------------------------------------------------
+[debug] [2020-02-23T22:16:53.466Z] Command:       /usr/bin/node /usr/local/bin/firebase use --token --only hosting:passrator
+[debug] [2020-02-23T22:16:53.466Z] CLI Version:   7.13.1
+[debug] [2020-02-23T22:16:53.466Z] Platform:      linux
+[debug] [2020-02-23T22:16:53.466Z] Node Version:  v12.15.0
+[debug] [2020-02-23T22:16:53.466Z] Time:          Sun Feb 23 2020 19:16:53 GMT-0300 (Horário Padrão de Brasília)
+[debug] [2020-02-23T22:16:53.466Z] ----------------------------------------------------------------------
+[debug] [2020-02-23T22:16:53.467Z] 
+[debug] [2020-02-23T22:16:53.472Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2020-02-23T22:16:53.472Z] > authorizing via --token option
+[debug] [2020-02-23T22:16:53.474Z] > refreshing access token with scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2020-02-23T22:16:53.474Z] >>> HTTP REQUEST POST https://www.googleapis.com/oauth2/v3/token  
+ <request body omitted>
+[debug] [2020-02-23T22:16:53.697Z] <<< HTTP RESPONSE 400
+[debug] [2020-02-23T22:16:53.700Z] >>> HTTP REQUEST GET https://firebase.googleapis.com/v1beta1/projects/hosting:passrator  
+ 
