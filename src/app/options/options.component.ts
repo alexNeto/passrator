@@ -1,20 +1,16 @@
-import { Component } from '@angular/core';
+import {Component} from '@angular/core';
 
 @Component({
   selector: 'app-options',
-  templateUrl: './options.component.html',
-  styleUrls: ['./options.component.css']
+  templateUrl: './options.component.html'
 })
-
 export class OptionsComponent {
 
-  value = 50;
   passSizeValue = 9;
 
   passStrength = [];
   imgPath = '././assets/img/up.png';
-  configButton = 'configButtonON';
-  config = 'config';
+  isConfigOn = true;
   state = true;
   case = {
     upper: 'ABCDEFGHIJKLMNOPQRSTUVWXYZ',
@@ -30,13 +26,13 @@ export class OptionsComponent {
   }
 
 
-  passChar(Lower, Number, Upper, Special) {
+  passChar(Lower, hasNumber, Upper, Special) {
 
     this.possible = '';
     if (Lower.checked) {
       this.possible += this.case.lower;
     }
-    if (Number.checked) {
+    if (hasNumber.checked) {
       this.possible += this.case.number;
     }
     if (Upper.checked) {
@@ -51,13 +47,11 @@ export class OptionsComponent {
     if (!this.state) {
       this.state = true;
       this.imgPath = '././assets/img/up.png';
-      this.configButton = 'configButtonON';
-      this.config = 'config';
+      this.isConfigOn = true;
     } else {
       this.state = false;
       this.imgPath = '././assets/img/down.png';
-      this.configButton = 'configButtonOFF';
-      this.config = 'configOFF';
+      this.isConfigOn = false;
     }
   }
 
@@ -79,4 +73,5 @@ export class OptionsComponent {
       }
     }
   }
+
 }

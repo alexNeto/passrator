@@ -1,0 +1,8 @@
+#!/bin/bash
+
+echo "Adding version from tag $TRAVIS_TAG"
+sed -i "s/appVersion: '[0-9]*\.[0-9]*\.[0-9]'\+/appVersion: '$TRAVIS_TAG'/" ./src/environments/environment.prod.ts
+if [[ $TRAVIS_TAG == [0-9]*\.[0-9]*\.[0-9] ]]; then
+  sed -i "s/\"version\": \"[0-9]*\.[0-9]*\.[0-9]\"\+/\"version\": \"$TRAVIS_TAG\"/" ./package.json
+fi
+echo "Done"

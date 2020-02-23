@@ -1,12 +1,13 @@
-<div id="outerConfig" align="center">
-  <div id="{{ config }}">
-    <div class="leading"></div>
+<div id="config-container">
+
+  <div class="config" [ngClass]="{'config-off': !isConfigOn}">
     <span style="font-size:1.2em;">
       Password size: {{ passSizeValue.value }}</span
     >
-    <br />
+    <label for="pass-size" hidden>Size of the password</label>
     <input
       type="range"
+      id="pass-size"
       min="0"
       max="100"
       value="9"
@@ -16,7 +17,7 @@
 
     <form class="" (change)="passChar(lower, number, upper, special)">
       <div class="checkbox">
-        <span class="configText">Lower</span>
+        <span class="config-text">Lower</span>
         <input
           type="checkbox"
           id="lower"
@@ -27,7 +28,7 @@
         <label for="lower"></label>
       </div>
       <div class="checkbox">
-        <span class="configText">Number</span>
+        <span class="config-text">Number</span>
         <input
           type="checkbox"
           id="number"
@@ -38,12 +39,12 @@
         <label for="number"></label>
       </div>
       <div class="checkbox">
-        <span class="configText">Upper</span>
-        <input type="checkbox" id="upper" (change)="(upper.checked)" #upper />
+        <span class="config-text">Upper</span>
+        <input type="checkbox" id="upper" (change)="(upper.checked)" #upper/>
         <label for="upper"></label>
       </div>
       <div class="checkbox">
-        <span class="configText">Special</span>
+        <span class="config-text">Special</span>
         <input
           type="checkbox"
           id="special"
@@ -54,22 +55,22 @@
       </div>
     </form>
   </div>
-  <button id="{{ configButton }}" (mousedown)="showConfig()">
-    <img width="25px" src="{{ imgPath }}" />
+  <button [ngClass]="{'config-button-on': isConfigOn, 'config-button-off': !isConfigOn}" (mousedown)="showConfig()">
+    <img width="25px" src="{{ imgPath }}" alt="config button toggle"/>
   </button>
 </div>
 
-<div id="generate" align="center">
+<div class="generate">
   <button (click)="myEvent()">generate</button>
-  <br /><br /><br />
+  <div class="leading-3"></div>
   <div *ngIf="!state; then many; else few"></div>
   <ng-template #many>
-    <div *ngFor="let pass of passStrength; let i = index">
-      <span>{{ passStrength[i] }}</span>
-      <div class="leading"></div>
+    <div *ngFor="let pass of passStrength">
+      <span class="pass-text">{{ pass }}</span>
+      <div class="leading-1"></div>
     </div>
   </ng-template>
   <ng-template #few>
-    <span>{{ passStrength[0] }}</span>
+    <span class="pass-text">{{ passStrength[0] }}</span>
   </ng-template>
 </div>
