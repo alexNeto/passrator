@@ -15,7 +15,7 @@ script:
 deploy:
   skip_cleanup: true
   provider: firebase
-  project: "about-me-6a44f"
+  project: "passrator"
   token:
     secure: "$FIREBASE_TOKEN"
   on:
