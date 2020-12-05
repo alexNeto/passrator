@@ -20,11 +20,11 @@ export class OptionsComponent {
 
   possible = this.case.lower + this.case.number;
 
-  passSize(passSizeValue: any) {
+  passSize(passSizeValue: any): void {
     this.passSizeValue = passSizeValue;
   }
 
-  passChar(Lower: any, hasNumber: any, Upper: any, Special: any) {
+  passChar(Lower: any, hasNumber: any, Upper: any, Special: any): void {
     this.possible = '';
     if (Lower.checked) {
       this.possible += this.case.lower;
@@ -40,7 +40,7 @@ export class OptionsComponent {
     }
   }
 
-  showConfig() {
+  showConfig(): void {
     if (!this.state) {
       this.state = true;
       this.imgPath = '././assets/img/up.png';
@@ -52,7 +52,7 @@ export class OptionsComponent {
     }
   }
 
-  generate() {
+  generate(): string {
     let text = '';
     for (let i = 0; i < this.passSizeValue; i++) {
       text += this.possible.charAt(
@@ -62,7 +62,7 @@ export class OptionsComponent {
     return text;
   }
 
-  myEvent() {
+  myEvent(): void {
     if (this.state) {
       this.passStrength[0] = this.generate();
     } else {
