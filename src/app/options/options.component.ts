@@ -1,14 +1,13 @@
-import {Component} from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-options',
-  templateUrl: './options.component.html'
+  templateUrl: './options.component.html',
 })
 export class OptionsComponent {
-
   passSizeValue = 9;
 
-  passStrength = [];
+  passStrength: string[] = [];
   imgPath = '././assets/img/up.png';
   isConfigOn = true;
   state = true;
@@ -16,18 +15,16 @@ export class OptionsComponent {
     upper: 'ABCDEFGHIJKLMNOPQRSTUVWXYZ',
     lower: 'abcdefghijklmnopqrstuvwxyz',
     number: '0123456789',
-    special: '()~!@#$%^&*-+=|\\{}[]:;\"\'<>,.?/'
+    special: '()~!@#$%^&*-+=|\\{}[]:;"\'<>,.?/',
   };
 
   possible = this.case.lower + this.case.number;
 
-  passSize(passSizeValue) {
+  passSize(passSizeValue: any) {
     this.passSizeValue = passSizeValue;
   }
 
-
-  passChar(Lower, hasNumber, Upper, Special) {
-
+  passChar(Lower: any, hasNumber: any, Upper: any, Special: any) {
     this.possible = '';
     if (Lower.checked) {
       this.possible += this.case.lower;
@@ -58,13 +55,14 @@ export class OptionsComponent {
   generate() {
     let text = '';
     for (let i = 0; i < this.passSizeValue; i++) {
-      text += this.possible.charAt(Math.floor(Math.random() * this.possible.length));
+      text += this.possible.charAt(
+        Math.floor(Math.random() * this.possible.length)
+      );
     }
     return text;
   }
 
   myEvent() {
-
     if (this.state) {
       this.passStrength[0] = this.generate();
     } else {
@@ -73,5 +71,4 @@ export class OptionsComponent {
       }
     }
   }
-
 }
