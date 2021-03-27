@@ -1,0 +1,29 @@
+@import "../utilities/variables";
+@import "../utilities/mixins";
+
+
+.generate {
+  @extend %flex-center-column;
+}
+
+span {
+  @extend %default-font;
+  position: inherit;
+  font-size: 1.5em;
+  color: $primary-color;
+}
+
+.generate-button {
+  margin: 3rem;
+}
+
+.pass-container {
+  width: 70%;
+  display: flex;
+  justify-content: center;
+  margin: 1rem;
+}
+
+.pass-text {
+  word-break: break-all;
+}
