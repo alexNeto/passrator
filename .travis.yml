@@ -13,7 +13,7 @@ script:
 - npm run lint
 - npm run build
 deploy:
-  cleanup: false
+  skip_cleanup: true
   provider: script
   script: bash ci/deploy
   on:
