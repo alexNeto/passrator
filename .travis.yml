@@ -16,7 +16,8 @@ deploy:
   cleanup: false
   provider: firebase
   edge: true
-  token: $FIREBASE_TOKEN
+  token:
+    secure: $FIREBASE_TOKEN
   on:
     branch: master
     tags: true
