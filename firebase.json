@@ -1,7 +1,7 @@
 {
   "hosting": {
     "site": "passrator",
-    "public": "dist/passrator",
+    "public": "dist/passrator-app",
     "ignore": [
       "firebase.json",
       "**/.*",

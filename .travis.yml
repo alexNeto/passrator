@@ -1,22 +1,23 @@
 language: node_js
 node_js:
-  - lts/*
+- lts/*
 cache:
   directories:
-    - node_modules
+  - node_modules
 install:
-  - npm install
+- npm install
 before_script:
-  - chmod -R +x ./ci/
-  - "./ci/version_control"
+- chmod -R +x ./ci/
+- "./ci/version_control"
 script:
-  - npm run lint
-  - npm run build
+- npm run lint
+- npm run build
 deploy:
   cleanup: false
   provider: firebase
   edge: true
-  token: $FIREBASE_TOKEN
+  token:
+   secure: "$FIREBASE_TOKEN"
   on:
     branch: master
     tags: true
