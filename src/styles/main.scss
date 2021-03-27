@@ -82,9 +82,8 @@ header {
   @extend %flex-center-column;
   width: 100%;
   background-color: $secondary-background;
-  padding-top: 1rem;
+  padding-top: 2rem;
   padding-bottom: 3.5rem;
-  transition: all 2s ease-in-out;
 }
 
 .config-off {
@@ -131,18 +130,6 @@ button {
   }
 }
 
-.config-button-on {
-  @extend %shadow-1;
-  position: relative;
-  margin-bottom: 20px;
-  padding: 0;
-  top: -30px;
-  border-radius: 50%;
-  width: 60px;
-  height: 60px;
-  align-items: center;
-}
-
 span {
   @extend %default-font;
   position: inherit;
@@ -150,8 +137,24 @@ span {
   color: $primary-color;
 }
 
+.generate-button {
+  margin: 3rem;
+}
+
+.pass-container {
+  width: 70%;
+  display: flex;
+  justify-content: center;
+  margin: 1rem;
+}
+
 .pass-text {
   word-break: break-all;
+}
+
+.copy-icon {
+  border: none;
+  width: 1rem;
 }
 
 .config-text {

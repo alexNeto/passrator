@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component} from '@angular/core';
 
 @Component({
   selector: 'app-options',
@@ -40,18 +40,6 @@ export class OptionsComponent {
     }
   }
 
-  showConfig(): void {
-    if (!this.state) {
-      this.state = true;
-      this.imgPath = '././assets/img/up.png';
-      this.isConfigOn = true;
-    } else {
-      this.state = false;
-      this.imgPath = '././assets/img/down.png';
-      this.isConfigOn = false;
-    }
-  }
-
   generate(): string {
     let text = '';
     for (let i = 0; i < this.passSizeValue; i++) {
@@ -63,12 +51,16 @@ export class OptionsComponent {
   }
 
   myEvent(): void {
-    if (this.state) {
-      this.passStrength[0] = this.generate();
-    } else {
-      for (let j = 0; j < 10; j++) {
-        this.passStrength[j] = this.generate();
-      }
+    for (let j = 0; j < 10; j++) {
+      this.passStrength[j] = this.generate();
     }
+  }
+
+  copyToClipboard(text: string): void {
+    navigator.clipboard.writeText(text).then(() => {
+      console.log(`A senha ${text} foi copiada`)
+    }, (err) => {
+      console.log(`Houve um erro ao copiad o texto erro: ${err}`)
+    })
   }
 }

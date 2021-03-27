@@ -1,76 +1,68 @@
 <div id="config-container">
 
-    <div class="config" [ngClass]="{'config-off': !isConfigOn}">
+  <div class="config">
       <span style="font-size:1.2em;">
         Password size: {{ passSizeValue.value }}</span
       >
-      <label for="pass-size" hidden>Size of the password</label>
-      <input
-        type="range"
-        id="pass-size"
-        min="0"
-        max="100"
-        value="9"
-        (input)="passSize(passSizeValue.value)"
-        #passSizeValue
-      />
-  
-      <form class="" (change)="passChar(lower, number, upper, special)">
-        <div class="checkbox">
-          <span class="config-text">Lower</span>
-          <input
-            type="checkbox"
-            id="lower"
-            checked="true"
-            (change)="(lower.checked)"
-            #lower
-          />
-          <label for="lower"></label>
-        </div>
-        <div class="checkbox">
-          <span class="config-text">Number</span>
-          <input
-            type="checkbox"
-            id="number"
-            checked="true"
-            (change)="(number.checked)"
-            #number
-          />
-          <label for="number"></label>
-        </div>
-        <div class="checkbox">
-          <span class="config-text">Upper</span>
-          <input type="checkbox" id="upper" (change)="(upper.checked)" #upper/>
-          <label for="upper"></label>
-        </div>
-        <div class="checkbox">
-          <span class="config-text">Special</span>
-          <input
-            type="checkbox"
-            id="special"
-            (change)="(special.checked)"
-            #special
-          />
-          <label for="special"></label>
-        </div>
-      </form>
-    </div>
-    <button [ngClass]="{'config-button-on': isConfigOn, 'config-button-off': !isConfigOn}" (mousedown)="showConfig()">
-      <img width="25px" src="{{ imgPath }}" alt="config button toggle"/>
-    </button>
-  </div>
-  
-  <div class="generate">
-    <button (click)="myEvent()">generate</button>
-    <div class="leading-3"></div>
-    <div *ngIf="!state; then many; else few"></div>
-    <ng-template #many>
-      <div *ngFor="let pass of passStrength">
-        <span class="pass-text">{{ pass }}</span>
-        <div class="leading-1"></div>
+    <label for="pass-size" hidden>Size of the password</label>
+    <input
+      type="range"
+      id="pass-size"
+      min="0"
+      max="100"
+      value="9"
+      (input)="passSize(passSizeValue.value)"
+      #passSizeValue
+    />
+
+    <form class="" (change)="passChar(lower, number, upper, special)">
+      <div class="checkbox">
+        <span class="config-text">Lower</span>
+        <input
+          type="checkbox"
+          id="lower"
+          checked="checked"
+          (change)="(lower.checked)"
+          #lower
+        />
+        <label for="lower"></label>
       </div>
-    </ng-template>
-    <ng-template #few>
-      <span class="pass-text">{{ passStrength[0] }}</span>
-    </ng-template>
+      <div class="checkbox">
+        <span class="config-text">Number</span>
+        <input
+          type="checkbox"
+          id="number"
+          checked="checked"
+          (change)="(number.checked)"
+          #number
+        />
+        <label for="number"></label>
+      </div>
+      <div class="checkbox">
+        <span class="config-text">Upper</span>
+        <input type="checkbox" id="upper" (change)="(upper.checked)" #upper/>
+        <label for="upper"></label>
+      </div>
+      <div class="checkbox">
+        <span class="config-text">Special</span>
+        <input
+          type="checkbox"
+          id="special"
+          (change)="(special.checked)"
+          #special
+        />
+        <label for="special"></label>
+      </div>
+    </form>
   </div>
+</div>
+
+<div class="generate">
+  <button class="generate-button" (click)="myEvent()">generate</button>
+
+  <div class="pass-container" *ngFor="let pass of passStrength">
+      <span class="pass-text">{{ pass }}
+        <button class="btn-small" (click)="copyToClipboard(pass)"><img class="copy-icon" src="/assets/img/clipboard-solid.svg"
+                                                                       alt="Copy Text"/></button></span>
+  </div>
+</div>
