@@ -13,10 +13,10 @@ script:
   - npm run lint
   - npm run build
 deploy:
-  skip_cleanup: true
+  cleanup: false
   provider: firebase
-  token:
-    secure: "$FIREBASE_TOKEN"
+  edge: true
+  token: $FIREBASE_TOKEN
   on:
     branch: master
     tags: true

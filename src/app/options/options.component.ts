@@ -8,14 +8,12 @@ export class OptionsComponent {
   passSizeValue = 9;
 
   passStrength: string[] = [];
-  imgPath = '././assets/img/up.png';
-  isConfigOn = true;
   state = true;
   case = {
     upper: 'ABCDEFGHIJKLMNOPQRSTUVWXYZ',
     lower: 'abcdefghijklmnopqrstuvwxyz',
     number: '0123456789',
-    special: '()~!@#$%^&*-+=|\\{}[]:;"\'<>,.?/',
+    special: '()~!@#$%^&*-+=|{}[]:;<>,.?/',
   };
 
   possible = this.case.lower + this.case.number;
@@ -58,9 +56,9 @@ export class OptionsComponent {
 
   copyToClipboard(text: string): void {
     navigator.clipboard.writeText(text).then(() => {
-      console.log(`A senha ${text} foi copiada`)
+      console.log(`A senha ${text} foi copiada`);
     }, (err) => {
-      console.log(`Houve um erro ao copiad o texto erro: ${err}`)
-    })
+      console.log(`Houve um erro ao copiad o texto erro: ${err}`);
+    });
   }
 }
