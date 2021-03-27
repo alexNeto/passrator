@@ -1,13 +1,11 @@
 <div class="config-container">
 
   <div class="config">
-      <span style="font-size:1.2em;">
-        Password size: {{ passSizeValue.value }}</span
-      >
-    <label for="pass-size" hidden>Size of the password</label>
+    <label class="pass-length-label" for="pass-size">Password size: {{ passSizeValue.value }}</label>
     <input
       type="range"
       id="pass-size"
+      name="pass-size"
       min="0"
       max="100"
       value="9"
