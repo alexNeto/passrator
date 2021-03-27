@@ -1,10 +1,13 @@
 import {Component} from '@angular/core';
+import {faClipboard} from '@fortawesome/free-regular-svg-icons';
+
 
 @Component({
   selector: 'app-options',
   templateUrl: './options.component.html',
 })
 export class OptionsComponent {
+  faClipboard = faClipboard;
   passSizeValue = 9;
 
   passStrength: string[] = [];
