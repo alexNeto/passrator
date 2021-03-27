@@ -1,4 +1,4 @@
-<div id="config-container">
+<div class="config-container">
 
   <div class="config">
       <span style="font-size:1.2em;">
@@ -62,7 +62,7 @@
 
   <div class="pass-container" *ngFor="let pass of passStrength">
       <span class="pass-text">{{ pass }}
-        <button class="btn-small" (click)="copyToClipboard(pass)"><img class="copy-icon" src="/assets/img/clipboard-solid.svg"
-                                                                       alt="Copy Text"/></button></span>
+        <button class="btn-small" (click)="copyToClipboard(pass)"><fa-icon
+          [icon]="faClipboard"></fa-icon></button></span>
   </div>
 </div>
