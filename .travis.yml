@@ -14,10 +14,8 @@ script:
 - npm run build
 deploy:
   cleanup: false
-  provider: firebase
-  edge: true
-  token:
-    secure: $FIREBASE_TOKEN
+  provider: script
+  script: bash ci/deploy
   on:
     branch: master
     tags: true
