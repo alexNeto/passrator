@@ -1,20 +1,20 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { OptionsComponent } from './options.component';
+import { PassViewComponent } from './pass-view.component';
 
-describe('OptionsComponent', () => {
-  let component: OptionsComponent;
-  let fixture: ComponentFixture<OptionsComponent>;
+describe('PassViewComponent', () => {
+  let component: PassViewComponent;
+  let fixture: ComponentFixture<PassViewComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ OptionsComponent ]
+      declarations: [ PassViewComponent ]
     })
     .compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(OptionsComponent);
+    fixture = TestBed.createComponent(PassViewComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

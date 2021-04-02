@@ -14,7 +14,7 @@ span {
 }
 
 .generate-button {
-  margin: 3rem;
+  margin-top: 3rem;
 }
 
 .pass-container {
@@ -22,6 +22,10 @@ span {
   display: flex;
   justify-content: center;
   margin: 1rem;
+}
+
+.pass-container:first-child {
+  margin-top: 3rem;
 }
 
 .pass-text {
