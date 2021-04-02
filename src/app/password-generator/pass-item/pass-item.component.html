@@ -1,0 +1,8 @@
+<span class="pass-text">
+  {{ pass }}
+  <button class="btn-small" (click)="copyToClipboard()">
+      <fa-icon *ngIf="!copied; else notCopied" [icon]="faClipboard"></fa-icon>
+
+    <ng-template #notCopied><fa-icon [icon]="faCheck"></fa-icon></ng-template>
+  </button>
+</span>

@@ -1,0 +1,5 @@
+<div class="generate">
+  <div class="pass-container" *ngFor="let pass of passGeneratorState$ | async">
+    <app-pass-item [pass]="pass"></app-pass-item>
+  </div>
+</div>
