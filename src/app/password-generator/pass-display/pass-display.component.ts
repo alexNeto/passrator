@@ -1,6 +1,6 @@
 import {Component} from '@angular/core';
-import {Observable} from "rxjs";
-import {select, Store} from "@ngrx/store";
+import {Observable} from 'rxjs';
+import {select, Store} from '@ngrx/store';
 
 @Component({
   selector: 'app-pass-display',

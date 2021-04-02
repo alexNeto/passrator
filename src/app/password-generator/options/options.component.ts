@@ -1,9 +1,9 @@
 import {Component} from '@angular/core';
-import {PassProperties} from "../../services/pass-generator/passProperties";
-import {PassGeneratorService} from "../../services/pass-generator/pass-generator.service";
-import {Observable} from "rxjs";
-import {select, Store} from "@ngrx/store";
-import {update} from "../../services/pass-generator/password.actions";
+import {PassProperties} from '../../services/pass-generator/passProperties';
+import {PassGeneratorService} from '../../services/pass-generator/pass-generator.service';
+import {Observable} from 'rxjs';
+import {select, Store} from '@ngrx/store';
+import {update} from '../../services/pass-generator/password.actions';
 
 
 @Component({
@@ -21,7 +21,7 @@ export class OptionsComponent {
     hasUpperCase: false,
     hasNumbers: true,
     hasSpecialCharacters: false
-  }
+  };
 
   constructor(private passGeneratorService: PassGeneratorService, private store: Store<{ passGeneratorState: string[] }>) {
     this.passGeneratorState$ = store.pipe(select('passGeneratorState'));

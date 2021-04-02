@@ -3,9 +3,9 @@ import {update} from './password.actions';
 
 export const initialState: string[] = [];
 
-const _passwordGeneratorReducer = createReducer(
+const createPasswordGeneratorReducer = createReducer(
   initialState,
   on(update, (state, {generatedPasswords}) => generatedPasswords)
 );
 
-export const passwordGeneratorReducer = _passwordGeneratorReducer;
+export const passwordGeneratorReducer = createPasswordGeneratorReducer;

@@ -8,11 +8,12 @@ import {faCheckSquare, faClipboard} from '@fortawesome/free-regular-svg-icons';
 })
 export class PassItemComponent {
 
+  @Input() pass = '';
+
   faClipboard = faClipboard;
   faCheck = faCheckSquare;
 
-  @Input() pass: string = '';
-  copied: boolean = false
+  copied = false;
 
   copyToClipboard(): void {
     navigator.clipboard.writeText(this.pass).then(() => {

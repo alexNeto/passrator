@@ -1,41 +1,39 @@
 import {Injectable} from '@angular/core';
-import {PassProperties} from "./passProperties";
+import {PassProperties} from './passProperties';
+import * as _ from 'lodash';
 
 @Injectable({
   providedIn: 'root'
 })
 export class PassGeneratorService {
 
-  private chacacterDictionary = {
+  private characterDictionary = {
     upper: 'ABCDEFGHIJKLMNOPQRSTUVWXYZ',
     lower: 'abcdefghijklmnopqrstuvwxyz',
-    number: '0123456789',
+    digits: '0123456789',
     special: '()~!@#$%^&*-+=|{}[]:;<>,.?/',
   };
 
-  private buildDictionary(passProperties: PassProperties): string {
-    return [
-      passProperties.hasLowerCase ? this.chacacterDictionary.lower : '',
-      passProperties.hasUpperCase ? this.chacacterDictionary.upper : '',
-      passProperties.hasNumbers ? this.chacacterDictionary.number : '',
-      passProperties.hasSpecialCharacters ? this.chacacterDictionary.special : '',
-    ].join('');
-  }
-
-  private generatePassword(passProperties: PassProperties): string {
-    const result: string[] = [];
-    const dictionary = this.buildDictionary(passProperties);
-    for (let i = 0; i < passProperties.length; i++) {
-      result.push(dictionary.charAt(Math.floor(Math.random() * dictionary.length)));
-    }
-    return result.join('');
+  private static createPassword(dictionary: string): string {
+    return dictionary.charAt(Math.floor(Math.random() * dictionary.length));
   }
 
   generate(passProperties: PassProperties): string[] {
-    const result: string[] = [];
-    for (let i = 0; i < (passProperties.quantity || 10); i++) {
-      result.push(this.generatePassword(passProperties));
-    }
-    return result;
+    return _.range(0, passProperties.quantity)
+      .map(() => this.generatePassword(passProperties));
+  }
+
+  private buildDictionary(passProperties: PassProperties): string {
+    return _.join([
+      passProperties.hasLowerCase ? this.characterDictionary.lower : '',
+      passProperties.hasUpperCase ? this.characterDictionary.upper : '',
+      passProperties.hasNumbers ? this.characterDictionary.digits : '',
+      passProperties.hasSpecialCharacters ? this.characterDictionary.special : '',
+    ], '');
+  }
+
+  private generatePassword(passProperties: PassProperties): string {
+    const createPassword = () => PassGeneratorService.createPassword(this.buildDictionary(passProperties));
+    return _.join(_.range(0, passProperties.length).map(createPassword), '');
   }
 }
