@@ -9,10 +9,12 @@ import {StoreModule} from '@ngrx/store';
 import {FontAwesomeModule} from '@fortawesome/angular-fontawesome';
 import {passwordGeneratorReducer} from './services/pass-generator/password.reducer';
 import {StoreDevtoolsModule} from '@ngrx/store-devtools';
+import { HomeComponent } from './home/home.component';
 
 @NgModule({
   declarations: [
     AppComponent,
+    HomeComponent,
   ],
   imports: [
     BrowserModule,

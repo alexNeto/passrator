@@ -1,6 +1,6 @@
 import {NgModule} from '@angular/core';
 import {RouterModule, Routes} from '@angular/router';
-import {PassViewComponent} from "./pass-view/pass-view.component";
+import {PassViewComponent} from './pass-view/pass-view.component';
 
 const routes: Routes = [
   {

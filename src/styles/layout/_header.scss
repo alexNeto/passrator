@@ -2,10 +2,17 @@
 @import "../utilities/mixins";
 
 .logo {
-  float: left;
+  display: flex;
+  align-items: center;
   color: $primary-color;
   padding-left: 2rem;
   @extend %default-font;
+
+  a {
+    font-size: 1.75rem;
+    color: $primary-color;
+    margin-right: 1rem;
+  }
 }
 
 header {

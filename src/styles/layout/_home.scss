@@ -1,0 +1,22 @@
+@import "../utilities/mixins";
+@import "../utilities/variables";
+
+.home-selection-container {
+  width: 100%;
+  @extend %flex-center-column;
+  margin: 3rem 0;
+}
+
+.home-selection-card {
+  border-radius: 3px;
+  padding: 3rem 6rem;
+  background: $secondary-background;
+  margin-bottom: 3rem;
+  @extend %shadow-1
+}
+
+.home-selection-card__label {
+  display: block;
+  margin-bottom: 1rem;
+}
+
