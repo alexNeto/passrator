@@ -1,21 +1,22 @@
 language: node_js
 node_js:
-- lts/*
+  - lts/*
 cache:
   directories:
-  - node_modules
+    - node_modules
 install:
-- npm install
+  - npm install
 before_script:
-- chmod -R +x ./ci/
-- "./ci/version_control"
+  - chmod -R +x ./ci/
+  - "./ci/version_control"
 script:
-- npm run lint
-- npm run build
+  - npm run lint
+  - npm run build
 deploy:
   skip_cleanup: true
-  provider: script
-  script: bash ci/deploy
+  provider: firebase
+  token:
+    secure: Zkn2tVK7rAzKtLC/DCV1CsBm6+k8Khjx3HDCMLnsDnSczMSV4Fvsxaddp89rV4QNylPYXJOg1Z3k7nwbbYWSMEP+h4UjBre7vCGCwmkuJNxLSPvI7YpbjFt8Rk9kVknN0tSYSkaljMIG1vKsV80C9giHbv+W/KNhcBkLBcgTfREbZ+/IPS/clffgzW2z7Izmnr8abBvT6Sn9YoAz3al5xtHHSdn9D59WnCABHQyqHSoJtu8ENWFA/BIB8P1pKZXX76j0+Mg4gRt+oYI0vQgaAUGK5exY1Azf8WDP+nZ8uLXKrj/tlXv8DFlIX7K6D5UN7DKv8G2cTzy2E8h8rZHE51psavJIOSI/cMmHc9P7TSj23kjapbXVAkBzX20/jXOymGbtYyzNXAL6raB9+QP4WKiSIqzzuTlCwg3ICotBBV9+0aZFLYGrqr8oHsxmLT11pIwA6obhgEq4AFb7vIFE42GJTaKx834I/yCrPxyHvPqDR0508sJXk0kr0eAF+5ifc+oK+bPSIgYAsqmvoKKks/aE0pEGVIAuTdu1ACWEH9MadVvrLFVdgRrzIumqZkN/8JEPXkIoPZ9oEYCCW4Kzm6OkmYvD/syiIVnsOoaH3+23wDaF9ZQPMebxNjePHgN7TrqLWyS5cvGo7Slx5SjvoTQe9/blDYgzwP/g9T+q9w0=
   on:
     branch: master
     tags: true
