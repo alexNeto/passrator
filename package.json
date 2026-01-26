@@ -27,7 +27,7 @@
     "@fortawesome/free-solid-svg-icons": "^5.15.3",
     "@ngrx/store": "^11.0.1",
     "@ngrx/store-devtools": "^11.1.0",
-    "lodash": "^4.17.21",
+    "lodash": "^4.17.23",
     "rxjs": "~6.6.6",
     "tslib": "^2.1.0",
     "zone.js": "~0.11.4"
@@ -37,7 +37,7 @@
     "@angular-eslint/builder": "2.0.2",
     "@angular-eslint/eslint-plugin": "2.0.2",
     "@angular-eslint/eslint-plugin-template": "2.0.2",
-    "@angular-eslint/schematics": "2.0.2",
+    "@angular-eslint/schematics": "21.1.0",
     "@angular-eslint/template-parser": "2.0.2",
     "@angular/cli": "~11.2.6",
     "@angular/compiler-cli": "~11.2.7",
